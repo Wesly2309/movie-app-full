@@ -10,7 +10,9 @@
                         <img src="/img/demonslayer.jpg" alt="Demon Slayer">
                     </a>
                     <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 text-white hover:text-gray-300">Demon Slayer: Kimetsu No Yaiba - To the Swordsmith Village</a>
+                        <a href="#" class="text-lg mt-2 text-white hover:text-gray-300">Demon Slayer: Kimetsu No Yaiba
+                            - To the Swordsmith Village
+                        </a>
                         <div class="flex items-center text-gray-400">
                             <svg class="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
                                 <g data-name="
@@ -26,19 +28,20 @@
                             <span class="ml-1">6.7</span>
                             <span class="mx-2">|</span>
                             <span>9 April 2023</span>
-                            <div class="text-gray-400 text-sm">
-                                Action, Adventure, Fantasy, Sci-Fi
-                            </div>
+                        </div>
+                        <div class="text-gray-400 text-sm ">
+                            Action, Adventure, Fantasy, Sci-Fi
                         </div>
                     </div>
-                    
                 </div>
                 <div class="mt-8">
                     <a href="#">
-                        <img src="/img/spiderman.jpg" alt="Spider Man">
+                        <img src="/img/spiderman.jpg" alt="Demon Slayer" width="300">
                     </a>
                     <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 text-white hover:text-gray-300">Spider-Man: No Way Home</a>
+                        <a href="#" class="text-lg mt-2 text-white hover:text-gray-300">Demon Slayer: Kimetsu No Yaiba
+                            - To the Swordsmith Village
+                        </a>
                         <div class="flex items-center text-gray-400">
                             <svg class="fill-current text-orange-500 w-4" viewBox="0 0 24 24">
                                 <g data-name="
@@ -51,18 +54,22 @@
                                         data-name="star" />
                                     <g>
                             </svg>
-                            <span class="ml-1">8.2</span>
+                            <span class="ml-1">6.7</span>
                             <span class="mx-2">|</span>
-                            <span>15 December 2021</span>
-                            <div class="text-gray-400 text-sm">
-                                Action, Adventure, Fantasy, Sci-Fi
-                            </div>
+                            <span>9 April 2023</span>
+                        </div>
+                        <div class="text-gray-400 text-sm ">
+                            Action, Adventure, Fantasy, Sci-Fi
                         </div>
                     </div>
-                    </div> <!-- end popular movies -->
-                    
                 </div>
+
             </div>
+
+
         </div>
+
+    </div>
+    </div>
     </div>
 @endsection
