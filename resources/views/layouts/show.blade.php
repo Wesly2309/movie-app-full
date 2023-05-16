@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
     <div class="movie info border-b border-gray-800">
@@ -9,5 +9,5 @@
             </div>
         </div>
         
-    </div> <!-- end movie -->
+    </div> <!-- end movie-info -->
 @endsection

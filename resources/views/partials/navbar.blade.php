@@ -1,6 +1,6 @@
 <nav class="border-b border-gray-800">
-    <div class="container mx-auto  flex flex-col md:flex-row items-center justify-between  py-6">
-        <ul class="flex items-center">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between px-4 py-6">
+        <ul class="flex flex-col md:flex-row items-center">
             <li>
                 <a href="#">
                     <svg class="w-32" viewBox="0 0 96 24" fill="none">
@@ -11,16 +11,16 @@
                 </a>
 
             </li>
-            <li class="ml-16">
+            <li class="md:ml-16 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">Movies</a>
-            <li class="ml-6">
+            <li class="md:ml-16 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">TV Shows</a>
-            <li class="ml-6">
+            <li class="md:ml-16 mt-3 md:mt-0">
                 <a href="#" class="hover:text-gray-300">Actors</a>
             </li>
         </ul>
-        <div class="flex items-center">
-            <div class="relative">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="relative mt-3 md:mt-0">
                 <input type="text"
                     class="bg-gray-800 text-sm rounded-full w-64 px-8 py-1 focus:outline-none focus:shadow-outline"
                     placeholder="Search">
@@ -28,7 +28,7 @@
                     <i class="ml-2 mt-4 item-center fa-solid fa-magnifying-glass fa-sm mb-3"></i>
                 </div>
             </div>
-            <div class="ml-4">
+            <div class="md:ml-4 mt-3 md:mt-0">
                 <a href="#">
                     <img src="/img/chrisevans.jpg" alt="Chris Evans" class="rounded-full w-8 h-8">
                 </a>
