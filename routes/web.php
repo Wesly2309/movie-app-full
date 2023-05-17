@@ -8,3 +8,4 @@ Route::view('/movie', 'layouts.show');
 
 Route::get('/', [HomeController::class , 'index']);
 
+
