@@ -24,9 +24,7 @@ class MoviesController extends Controller
             return [$genre['id'] => $genre['name']];
         });
 
-        dd($popularMovies);
-
-        return view('index', collect('popularMovies', 'genres'));
+        return view('applications.home', compact('popularMovies', 'genres'));
     }
 
     /**
