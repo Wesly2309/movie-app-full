@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Collection;
 
 class MoviesController extends Controller
 {
@@ -13,18 +12,14 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        
-        try {
         $popularMovies = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/movie/popular')
             ->json()['results'];
-        } catch(\Exception $e) {
-            dd($e->getMessage());
-        }
+
         $genresArray = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/genre/movie/list')
             ->json()['genres'];
-        
+
         $genres = collect($genresArray)->mapwithKeys(function ($genre) {
             return [$genre['id'] => $genre['name']];
         });
@@ -39,7 +34,6 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -47,7 +41,6 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -55,7 +48,6 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
@@ -63,7 +55,6 @@ class MoviesController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -71,7 +62,6 @@ class MoviesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -79,6 +69,5 @@ class MoviesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }
