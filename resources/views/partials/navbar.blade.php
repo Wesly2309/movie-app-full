@@ -30,7 +30,7 @@
             </div>
             <div class="md:ml-4 mt-3 md:mt-0">
                 <a href="#">
-                    <img src="/img/chrisevans.jpg" alt="Chris Evans" class="rounded-full w-8 h-8">
+                    <img src="/img/weslylim.jpg" alt="Wesly Lim" class="rounded-full w-8 h-8">
                 </a>
             </div>
         </div>
