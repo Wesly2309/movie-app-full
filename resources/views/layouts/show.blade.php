@@ -51,16 +51,22 @@
                 </div>
             </div>
 
+            <div x-data="{ isOpen: false }">
             @if (count($movie['videos']['results']) > 0)
             <div class="mt-12">
-                <a href="https://youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"
-                class="flex inline-flex items-center bg-orange-500 text-gray-900 rounded font-semibold px-2 py-4 hover:bg-orange-600 transition ease-in-out duration-150">
+                <button
+                    @click="isOpen = true"
+                    href="https://youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}"
+                    class="flex inline-flex items-center bg-orange-500 text-gray-900 rounded 
+                    font-semibold px-2 py-4 hover:bg-orange-600 transition ease-in-out duration-150"
+                >
                     <svg class="w-6 fill-current" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 16.516-4.5-6-4.5v9zM12 2C6.48. 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
                     <i class="mr-3 fa-sharp fa-regular fa-circle-play fa-2xl"></i>
                     <span class="mr-3">Play Trailer</span>
-                </a>
+                </button>
             </div>
             @endif
+            
             <div
                 style="background-color: rgba(0, 0, 0, .5);"
                 class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
