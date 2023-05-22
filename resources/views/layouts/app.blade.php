@@ -13,6 +13,7 @@
     <!-- Stylesheet -->
     @vite('resources/css/app.css')
     <@livewireStyles>
+    <script src="https://cdn.jsdelivr.net/gh/alphinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="bg-slate-900 text-white">
