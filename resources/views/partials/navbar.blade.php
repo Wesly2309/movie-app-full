@@ -20,14 +20,7 @@
             </li>
         </ul>
         <div class="flex flex-col md:flex-row items-center">
-            <div class="relative mt-3 md:mt-0">
-                <input type="text"
-                    class="bg-gray-800 text-sm rounded-full w-64 px-8 py-1 focus:outline-none focus:shadow-outline"
-                    placeholder="Search">
-                <div class="absolute top-0">
-                    <i class="ml-2 mt-4 item-center fa-solid fa-magnifying-glass fa-sm mb-3"></i>
-                </div>
-            </div>
+            <livewire:search-drop-down>
             <div class="md:ml-4 mt-3 md:mt-0">
                 <a href="#">
                     <img src="/img/weslylim.jpg" alt="Wesly Lim" class="rounded-full w-8 h-8">

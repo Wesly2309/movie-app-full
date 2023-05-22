@@ -12,13 +12,13 @@
 
     <!-- Stylesheet -->
     @vite('resources/css/app.css')
+    <@livewireStyles>
 </head>
 
 <body class="bg-slate-900 text-white">
     <!-- Your content -->
     @include('partials.navbar')
     @yield('content')
-
+    <@livewireScripts>
 </body>
-
 </html>
