@@ -66,7 +66,6 @@
                 </button>
             </div>
             @endif
-            
             <div
                 style="background-color: rgba(0, 0, 0, .5);"
                 class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto"
@@ -88,10 +87,10 @@
                     </div>
                 </div>
             </div>
-
-
+            
         </div>
     </div>
+</div>
     
     <div class="movie-cast border-b border-gray 800">
         <div class="container mx-auto px-4 py-16">
