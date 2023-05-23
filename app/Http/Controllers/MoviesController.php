@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ViewModels\MoviesViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -28,7 +29,15 @@ class MoviesController extends Controller
             return [$genre['id'] => $genre['name']];
         });
 
-        return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
+        // return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
+
+        $viewModel = new MoviesViewModel(
+            $popularMovies,
+            $nowPlayingMovies,
+            $genres,
+        );
+
+        return view('applications.home', $viewModel);
     }
 
     /**
