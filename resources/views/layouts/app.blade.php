@@ -20,6 +20,6 @@
     <!-- Your content -->
     @include('partials.navbar')
     @yield('content')
-    <@livewireScripts>
+    @livewireScripts
 </body>
 </html>
