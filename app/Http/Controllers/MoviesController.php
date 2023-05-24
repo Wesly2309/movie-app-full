@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ViewModels\MoviesViewModel;
 use App\ViewModels\MovieViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -10,8 +11,6 @@ class MoviesController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -33,13 +32,13 @@ class MoviesController extends Controller
 
         // return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
 
-        $viewModel = new MovieViewModel(
+        $viewModel = new MoviesViewModel(
             $popularMovies,
             $nowPlayingMovies,
             $genres,
         );
 
-        return view('applications.home', compact('viewModel'));
+        return view('applications.home', $viewModel);
     }
 
     /**
