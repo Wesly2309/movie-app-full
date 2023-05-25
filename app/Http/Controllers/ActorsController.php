@@ -16,24 +16,8 @@ class ActorsController extends Controller
         $popularActors = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/person/popular')
             ->json()["results"];
-
-            
-            // $titlesArray = json_decode(Http::withToken(config('services.tmdb.token'))
-            // ->get('https://api.themoviedb.org/3/person/popular'));
-
-
-            $results = json_decode(Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/person/popular'), true);
-
-            dd($results['id']['known_for']['title']);
-
-            // $titles = collect($titlesArray)->mapwithKeys(function ($title) {
-        //     // return [$title['id'] => $title['title']];
-        // });
-       
-
-                    
-        return view('actors.home' , compact('popularActors', 'results'));
+        
+        return view('actors.home' , compact('popularActors'));
     }
 
     /**

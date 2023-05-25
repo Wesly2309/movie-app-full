@@ -14,9 +14,13 @@
                         <div class="mt-2">
                             <a href="#" class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
                             <div class="text-sm truncate text-gray-480">
-
-                                @foreach ($results['results'] as $result)
-                                    {{ $result[$loop->index]['known_for']['title'] }}
+                                @foreach ($actor['known_for'] as $knownFor)
+                                    @if (array_key_exists('title', $knownFor))                                        
+                                        <a href="{{ route('movies.show', $knownFor['id']) }}">
+                                            {{$knownFor['title']}}
+                                        </a>
+                                        {{!$loop->last?", ": ""}}
+                                    @endif
                                 @endforeach
                             </div>
                         </div>
