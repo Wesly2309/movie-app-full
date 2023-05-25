@@ -1,6 +1,6 @@
 <div class="mt-8">
     <a href="{{ route('movies.show', $movie['id']) }}">
-        <img src="{{ $movie['poster_path'] }}" alt="poster"
+        <img src="{{ 'https://image.tmdb.org/t/p/original'.$movie['poster_path'] }}" alt="poster"
         class="hover:opacity-75 transition
         ease-in-out duration-150">
     </a>
@@ -26,9 +26,11 @@
         </div>
 
         <div class="text-gray-400 text-sm ">
-            @foreach ($movie['genre_ids'] as $genres)
-            {{ $genres->get($genre) }}@if (!$loop->last), @endif
-        @endforeach
+            @foreach ($genres as $item)
+                @if(in_array($item['id'], $movie['genre_ids']))
+                    {{ $item['name']}}{{!$loop->last ? ', ': ''}}
+                @endif
+            @endforeach
         </div>
     </div>
 </div>
