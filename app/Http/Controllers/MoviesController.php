@@ -29,7 +29,7 @@ class MoviesController extends Controller
             return [$genre['id'] => $genre['name']];
         });
 
-        return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
+        return view('movies.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
     }
 
     /**
@@ -55,7 +55,7 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/movie/'.$id.'?append_to_response=credits,videos,images')
             ->json();
 
-        return view('layouts.show', [
+        return view('movies.show', [
             'movie' => $movie,
         ]);
     }
