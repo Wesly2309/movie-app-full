@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\ViewModels\MoviesViewModel;
 use App\ViewModels\MovieViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -22,23 +21,15 @@ class MoviesController extends Controller
             ->get('https://api.themoviedb.org/3/movie/now_playing')
             ->json()['results'];
 
-        $genres = Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/genre/movie/list')
-            ->json()['genres'];
+        $genresArray = Http::withToken(config('services.tmdb.token'));
 
-        // $genres = collect($genresArray)->mapwithKeys(function ($genre) {
-        // return [$genre['id'] => $genre['name']];
-        // });
+        $genres = collect($genresArray)->mapwithKeys(function ($genre) {
+            return [$genre['id'] => $genre['name']];
+        });
 
-        // return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
+        return view('applications.home', compact('popularMovies', 'genres', 'nowPlayingMovies'));
 
-        $viewModel = new MoviesViewModel(
-            $popularMovies,
-            $nowPlayingMovies,
-            $genres,
-        );
-
-        return view('applications.home', $viewModel);
+        // return view('applications.home', compact('genres', 'nowPlayingMovies'));
     }
 
     /**
