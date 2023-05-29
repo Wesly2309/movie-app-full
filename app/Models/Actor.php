@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ActorsViewModel extends Model
+class Actor extends Model
 {
+    use HasFactory;
+
     public $popularActors;
+    protected $page;
     public function __construct($popularActors) 
     {
         $this->popularActors = $popularActors;
@@ -24,4 +27,14 @@ class ActorsViewModel extends Model
         ]);
     });
     }
+
+    public function previous() {
+        return $this->page  > 1 ? $this->page - 1 : null;
+    }
+
+    public function next() {
+        return $this->page < 500 ? $this->page  * 1 : null;
+    }
 }
+
+
