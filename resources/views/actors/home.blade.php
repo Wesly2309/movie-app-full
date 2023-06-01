@@ -32,13 +32,6 @@
 
         <div class="flex justify-between mt-16">
 
-            @if ($previous)
-                <a href="page/{{ $previous }}">Previous</a>
-            @endif
-
-            @if ($next)
-                <a href="page/{{ $next }}">Next</a>
-            @endif
 
         </div>
     </div>
