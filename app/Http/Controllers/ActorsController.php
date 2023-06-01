@@ -24,10 +24,9 @@ class ActorsController extends Controller
             ->get('https://api.themoviedb.org/3/person/popular?page='.$page)
             ->json()["results"];
 
-        $viewModel = new Actor($popularActors);
 
             
-        return view('actors.home', compact('viewModel','popularActors', 'page'));
+        return view('actors.home', compact('popularActors', 'page'));
     }
 
     /**
@@ -51,7 +50,24 @@ class ActorsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $actor = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/person/'.$id)
+        ->json();
+        $social = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/person/'.$id.'/external_ids')
+        ->json();
+        $credits = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/person/'.$id.'/combined_credits')
+        ->json();
+
+
+    return view('actors.show', [
+        
+        'actor' => $actor,
+        'social' => $social,
+        'credits' => $credits,
+        
+    ]);
     }
 
     /**
