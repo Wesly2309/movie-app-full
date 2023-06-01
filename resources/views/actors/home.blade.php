@@ -15,11 +15,11 @@
                             <a href="#" class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
                             <div class="text-sm truncate text-gray-480">
                                 @foreach ($actor['known_for'] as $knownFor)
-                                    @if (array_key_exists('title', $knownFor))                                        
+                                    @if (array_key_exists('title', $knownFor))
                                         <a href="{{ route('movies.show', $knownFor['id']) }}">
-                                            {{$knownFor['title']}}
+                                            {{ $knownFor['title'] }}
                                         </a>
-                                        {{!$loop->last?", ": ""}}
+                                        {{ !$loop->last ? ', ' : '' }}
                                     @endif
                                 @endforeach
                             </div>
@@ -28,6 +28,18 @@
                 @endforeach
 
             </div>
+        </div>
+
+        <div class="flex justify-between mt-16">
+
+            @if ($previous)
+                <a href="page/{{ $previous }}">Previous</a>
+            @endif
+
+            @if ($next)
+                <a href="page/{{ $next }}">Next</a>
+            @endif
+
         </div>
     </div>
 @endsection
