@@ -24,10 +24,10 @@ class ActorsController extends Controller
             ->get('https://api.themoviedb.org/3/person/popular?page='.$page)
             ->json()["results"];
 
-        $viewModel = Actor::popularActors($popularActors);
+        $viewModel = new Actor($popularActors);
 
             
-        return view('actors.home', compact('viewModels','popularActors', 'page'));
+        return view('actors.home', compact('viewModel','popularActors', 'page'));
     }
 
     /**
@@ -77,6 +77,8 @@ class ActorsController extends Controller
     {
         //
     }
+
+    
 
     
 }
