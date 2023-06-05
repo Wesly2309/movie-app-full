@@ -15,11 +15,12 @@ class ViewMoviesTest extends TestCase
     public function the_main_page_shows_correct_info()
     {
         Http::fake([
-            'https://api.themoviedb.org/3/movies/popular' => Http::response([
+            'https://api.themoviedb.org/3/movie/popular' => Http::response([
+                'results' => 'foo'
             ], 200),
         ]);
 
-        $response = $this->get(route('movies.index'));
+        $response = $this->get(route('movies.applicatios.home'));
 
         $response->assertSuccessful();
         $response->assertSee('Popular Movies');

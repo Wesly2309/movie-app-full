@@ -12,7 +12,7 @@
 
     <!-- Stylesheet -->
     @vite('resources/css/app.css')
-    <@livewireStyles>
+    <@livewireStyles />
     <script src="https://cdn.jsdelivr.net/gh/alphinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
@@ -22,4 +22,5 @@
     @yield('content')
     <@livewireScripts>
 </body>
+
 </html>
