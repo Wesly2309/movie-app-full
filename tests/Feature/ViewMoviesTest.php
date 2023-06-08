@@ -21,6 +21,10 @@ class ViewMoviesTest extends TestCase
         ]);
 
         $response = $this->get(route('movies.applicatios.home'));
+            ], 200),
+        ]);
+
+        $response = $this->get(route('applications.home'));
 
         $response->assertSuccessful();
         $response->assertSee('Popular Movies');
