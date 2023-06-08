@@ -26,7 +26,7 @@ class TvShowViewModel extends ViewModel
             'images' => collect($this->tvshow['images']['backdrops'])->take(9),
         ])->only([
             'poster_path', 'id', 'genre_ids', 'name', 'vote_average', 'overview', 'first_air_date', 'videos',
-            'images', 'crew', 'cast', 'images', 'created_by'
+            'images', 'crew', 'cast', 'images', 'created_by',
         ]);
     }
 }
