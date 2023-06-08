@@ -24,11 +24,5 @@
             <span>{{ \Carbon\Carbon::parse($tvshow['first_air_date'])->format('M, D, Y') }}
             </span>
         </div>
-        <div class="text-gray-400 text-sm ">
-            @foreach ($tvshow['genre_ids'] as $genre)
-                {{ $genres->get($genre) }}@if (!$loop->last)
-                @endif
-            @endforeach
-        </div>
     </div>
 </div>

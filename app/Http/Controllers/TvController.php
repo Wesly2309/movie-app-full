@@ -20,15 +20,8 @@ class TvController extends Controller
             ->get('https://api.themoviedb.org/3/tv/top_rated')
             ->json()['results'];
 
-        $genresArray = Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/genre/tv/list')
-            ->json()['genres'];
 
-        $genres = collect($genresArray)->mapwithKeys(function ($genre) {
-            return [$genre['id'] => $genre['name']];
-        });
-
-        return view('tv.home', compact('popularTv', 'topRatedTv', 'genres'));
+        return view('tv.home', compact('popularTv', 'topRatedTv'));
     }
 
     /**

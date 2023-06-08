@@ -16,6 +16,11 @@ class ViewMoviesTest extends TestCase
     {
         Http::fake([
             'https://api.themoviedb.org/3/movie/popular' => Http::response([
+                'results' => 'foo'
+            ], 200),
+        ]);
+
+        $response = $this->get(route('movies.applicatios.home'));
             ], 200),
         ]);
 
