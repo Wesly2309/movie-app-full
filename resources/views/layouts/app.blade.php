@@ -12,14 +12,12 @@
 
     <!-- Stylesheet -->
     @vite('resources/css/app.css')
-    <@livewireStyles />
     <script src="https://cdn.jsdelivr.net/gh/alphinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @livewireStyles
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="bg-slate-900 text-white">
-    <!-- Your content -->
     @include('partials.navbar')
     @yield('content')
     @livewireScripts
