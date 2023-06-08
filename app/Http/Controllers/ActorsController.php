@@ -16,11 +16,6 @@ class ActorsController extends Controller
             ->get('https://api.themoviedb.org/3/person/popular?page='.$page)
             ->json()['results'];
 
-<<<<<<< HEAD
-=======
-
-            
->>>>>>> f515e74acf72739b84ec577db3114113b62530a6
         return view('actors.home', compact('popularActors', 'page'));
     }
 
@@ -53,22 +48,11 @@ class ActorsController extends Controller
         ->get('https://api.themoviedb.org/3/person/'.$id.'/combined_credits')
         ->json();
 
-<<<<<<< HEAD
         return view('actors.show', [
             'actor' => $actor,
             'social' => $social,
             'credits' => $credits,
         ]);
-=======
-
-    return view('actors.show', [
-        
-        'actor' => $actor,
-        'social' => $social,
-        'credits' => $credits,
-        
-    ]);
->>>>>>> f515e74acf72739b84ec577db3114113b62530a6
     }
 
     /**

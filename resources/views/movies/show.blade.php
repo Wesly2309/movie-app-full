@@ -106,12 +106,7 @@
                         @if ($loop->index < 5)
                             <div class="mt-8">
                                 <a href="{{ route('actors.show', $cast['id']) }}">
-                                    <img src="{{ 'https://image.tmdb.org/t/p/w300/' . $cast['profile_path'] }}"
-<<<<<<< HEAD
-=======
-                                <a href="#">
                                     <img src="{{ 'https://image.tmdb.org/t/p/w500/' . $cast['profile_path'] }}"
->>>>>>> f515e74acf72739b84ec577db3114113b62530a6
                                         alt="actor"
                                         class="hover:opacity-75 transition
                             ease-in-out duration-150">
