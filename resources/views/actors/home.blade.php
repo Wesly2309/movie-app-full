@@ -12,8 +12,13 @@
                                 alt="{{ $actor['name'] }}" class="hover:opacity-75 transition ease-in-out duration-150">
                         </a>
                         <div class="mt-2">
+<<<<<<< HEAD
                             <a href="{{ route('actors.show', $actor['id']) }}" 
                             class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
+=======
+                            <a href="{{ route('actors.show', $actor['id']) }}"
+                                class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
+>>>>>>> f515e74acf72739b84ec577db3114113b62530a6
                             <div class="text-sm truncate text-gray-480">
                                 @foreach ($actor['known_for'] as $knownFor)
                                     @if (array_key_exists('title', $knownFor))

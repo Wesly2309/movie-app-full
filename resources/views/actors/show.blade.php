@@ -65,10 +65,17 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
                     <div class="mt-4">
+<<<<<<< HEAD
                         <a href="#"><img src="https://image.tmdb.org/t/p/
                                 w150_and_h225_bestv2/cezWGskPY5x7GaglTTRN4Fugfb8.jpg" alt="poster" class="
                                 hover:opacity-75 transition ease-in-out duration-150"></a>
                         <a href="#" class="text-sm leading-normal block text-gray-400 hover:text-white mt-1">The
+=======
+                        <a href=""><img
+                                src="https://image.tmdb.org/t/p/w_150_and_h225_bestv2/cezWGskPY5x7Gag1TTRN4Fugfb8.jpg"
+                                alt="poster" class="hover:opacity-75 transition ease-in-out duration-150"></a>
+                        <a href="#" class="text-sm loading-normal block text-gray-400 hover:text-white mt-1">The
+>>>>>>> f515e74acf72739b84ec577db3114113b62530a6
                             Avengers</a>
                     </div>
                 </div>
@@ -84,4 +91,8 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> f515e74acf72739b84ec577db3114113b62530a6
