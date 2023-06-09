@@ -14,11 +14,6 @@
                         <div class="mt-2">
                             <a href="{{ route('actors.show', $actor['id']) }}"
                                 class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
-<<<<<<< HEAD
-=======
-                            <a href="{{ route('actors.show', $actor['id']) }}"
-                                class="text-lg-hover:text-gray-300">{{ $actor['name'] }}</a>
->>>>>>> 0bbbde8be536f273e32c623c61d73dcec289785e
                             <div class="text-sm truncate text-gray-480">
                                 @foreach ($actor['known_for'] as $knownFor)
                                     @if (array_key_exists('title', $knownFor))

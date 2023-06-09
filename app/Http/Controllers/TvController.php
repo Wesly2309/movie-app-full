@@ -20,7 +20,6 @@ class TvController extends Controller
             ->get('https://api.themoviedb.org/3/tv/top_rated')
             ->json()['results'];
 
-
         return view('tv.home', compact('popularTv', 'topRatedTv'));
     }
 
