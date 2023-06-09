@@ -37,12 +37,9 @@ class TvViewModel extends Model
 
     public function formatTv($tv)
     {
-        // return collect($tv)->map(function ($tvshow) {
-        //     return $tvshow;
-        // })->dump();
         return collect($tv)->map(function ($tvshow) {
             $genresFormatted = collect($tvshow['genre_ids'])->mapWithKeys(function ($value) {
-                return [$value => $this->genre()->get($value)];
+                return [$value => $this->genres()->get($value)];
             })->implode(', ');
 
             return collect($tvshow)->merge([

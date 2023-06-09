@@ -2,89 +2,43 @@
 
 namespace App\ViewModels;
 
-use Carbon\Carbon;
 use Spatie\ViewModels\ViewModel;
 
 class ActorsViewModel extends ViewModel
 {
-    public $actor;
-    public $social;
-    public $credits;
+    public $popularActors;
+    public $page;
 
-    public function __construct($actor, $social, $credits)
+    public function __construct($popularActors, $page)
     {
-        $this->actor = $actor;
-        $this->social = $social;
-        $this->credits = $credits;
+        $this->popularActors = $popularActors;
+
+        $this->page = $page;
     }
 
-    public function actor()
+    public function popularActors()
     {
-        return collect($this->actor)->merge([
-            'birthday' => Carbon::parse($this->actor['birthday'])->format('M d, Y'),
-            'age' => Carbon::parse($this->actor['birthday'])->age,
-            'profile_path' => $this->actor['profile_path']
-                ? 'https://image.tmdb.org/t/p/w300/'.$this->actor['profile_path']
-                : 'https://via.placeholder.com/300x450',
-        ])->only([
-            'birthday', 'age', 'profile_path', 'name', 'id', 'homepage', 'place_of_birth', 'biography',
-        ]);
-    }
-
-    public function social()
-    {
-        return collect($this->social)->merge([
-            'twitter' => $this->social['twitter_id'] ? 'https://twitter.com/'.$this->social['twitter_id'] : null,
-            'facebook' => $this->social['facebook_id'] ? 'https://facebook.com/'.$this->social['facebook_id'] : null,
-            'instagram' => $this->social['instagram_id'] ? 'https://instagram.com/'.$this->social['instagram_id'] : null,
-        ])->only([
-            'facebook', 'instagram', 'twitter',
-        ]);
-    }
-
-    public function knownForMovies()
-    {
-        $castMovies = collect($this->credits)->get('cast');
-
-        return collect($castMovies)->sortByDesc('popularity')->takes(5)->map(function($movie) {
-            if (isset($movie['title'])) {
-                $title = $movie['title'];
-            } elseif (isset($movie['name'])) {
-                $title = $movie['name'];
-            } else {
-                $title = 'Untitled';
-            }
-
-   
-    public function credits()
-    {
-        $castMovies = collect($this->credits)->get('cast');
-        
-        return collect($castMovies)->map(function ($movie) {
-            if (isset($movie['release_date'])) {
-                $releaseDate = $movie['release_date'];
-            } elseif (isset($movie['first_air_date'])) {
-                $releaseDate = $movie['first_air_date'];
-            } else {
-                $releaseDate = '';
-            }
-
-            if (isset($movie['title'])) {
-                $title = $movie['title'];
-            } elseif (isset($movie['name'])) {
-                $title = $movie['name'];
-            } else {
-                $title = 'Untitled';
-            }
-
-            return collect($movie)->merge([
-                'poster_path' => $movie['poster_path']
-                    ? 'https://image.tmdb.org./t/p/w185'.$movie['poster_path']
-                    : 'https://via.placeholder.com/185x278',
-                'title' => $title,
+        return collect($this->popularActors)->map(function ($actor) {
+            return collect($actor)->merge([
+                'profile_path' => $actor['profile_path']
+                    ? 'https://image.tmdb.org/t/p/w235_and_h235_face'.$actor['profile_path']
+                    : 'https://ui-avatars.com/api/?size=235&name='.$actor['name'],
+                'known_for' => collect($actor['known_for'])->where('media_type', 'movie')->pluck('title')->union(
+                    collect($actor['known_for'])->where('media_type', 'tv')->pluck('name')
+                )->implode(', '),
             ])->only([
-                'poster_path', 'title', 'id', 'media_type',
+                'name', 'id', 'profile_path', 'known_for',
             ]);
         });
+    }
+
+    public function previous()
+    {
+        return $this->page > 1 ? $this->page - 1 : null;
+    }
+
+    public function next()
+    {
+        return $this->page < 500 ? $this->page + 1 : null;
     }
 }
