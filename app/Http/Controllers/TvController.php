@@ -46,6 +46,7 @@ class TvController extends Controller
             ->get('https://api.themoviedb.org/3/tv/'.$id.'?append_to_response=credits,videos,images')
             ->json();
 
+
         return view('tv.show', [
             'tvshow' => $tvshow,
         ]);
